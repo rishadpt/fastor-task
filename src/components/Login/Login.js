@@ -1,9 +1,13 @@
-import React from 'react'
 import Button from '../Button/Button'
 import './Login.scss'
-import { Link } from 'react-router-dom'
+
 
 export default function Login() {
+
+   
+
+    
+
     return (
         <div className="login-container">
             <div className="login-container__content">
@@ -11,7 +15,7 @@ export default function Login() {
                     <h1>Login</h1>
                     <div>
                         <p className="welcome__back">Welcome Back</p>
-                        <p>Please Login to Continue</p>
+                        <p className="welcome__back" >Please Login to Continue</p>
                     </div>
                 </div>
                     <div className="login-container__content__form__input">
@@ -19,11 +23,11 @@ export default function Login() {
                             <label>Mobile Number</label>
                             <div className="input__container">
                                 <span>+91</span>
-                                <input type="text" placeholder="Enter Your Mobile Number" />
+                                <input maxLength={10}  type="text" placeholder="Enter Your Mobile Number" />
                             </div>
                         </div>
                  
-                        <Button name="Request OTP" />
+                        <Button  name="Request OTP" link="/otp" />
     
                     </div>
                   

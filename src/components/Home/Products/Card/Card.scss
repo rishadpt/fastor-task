@@ -8,6 +8,8 @@
     border-radius: 5px;
     gap: 1rem;
     transition: all 0.3s ease-in-out;
+    text-decoration: none;
+    color: #000;
 
     &:hover {
         transform: scale(1.1);
@@ -81,7 +83,7 @@
 
 @media only screen and (max-width: 720px) {
     .card-container {
-      
+
         width: calc(50% - 1rem);
 
         p {
@@ -94,29 +96,31 @@
     }
 }
 
-@media only screen and (max-width: 600px){
-    .card-container{
-        .image__container{
+@media only screen and (max-width: 600px) {
+    .card-container {
+        .image__container {
             height: 10rem;
         }
     }
 }
 
-@media only screen and (max-width: 460px){
-    .card-container{
-        .image__container{
+@media only screen and (max-width: 460px) {
+    .card-container {
+        .image__container {
             height: 8rem;
         }
     }
 }
 
-@media only screen and (max-width:404px){
-    .card-container{
+@media only screen and (max-width:404px) {
+    .card-container {
         width: calc(100% - 1rem);
-        .image__container{
+
+        .image__container {
             height: 100%;
         }
-        h1{ 
+
+        h1 {
             font-size: 1.5rem;
         }
     }
