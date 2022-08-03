@@ -1,0 +1,17 @@
+.button-container {
+    padding: 0.8rem;
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    color: #fff;
+    background: #313157;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    text-decoration: none;
+    text-align: center;
+    
+    &:hover {
+        background: #535375;
+        color: #fff;
+    }
+}

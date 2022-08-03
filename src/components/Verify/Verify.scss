@@ -1,0 +1,127 @@
+.verify-container {
+    width: 100%;
+    height: 100vh;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    .verify__main {
+        display: flex;
+        flex-direction: column;
+        gap: 6rem;
+
+    }
+
+    .verification__title-container {
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+
+        h1 {
+            font-size: 3.5rem;
+        }
+
+        p {
+            font-size: 1rem;
+        }
+    }
+
+    .verify-form-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .verify__form {
+        display: flex;
+        gap: 1rem;
+
+        input {
+            outline: none;
+            width: 4.5rem;
+            height: 3rem;
+            text-align: center;
+            font-weight: 600;
+            font-size: 1.3rem;
+            background: #F4F4F4;
+            border: 1px solid #B1B1B1;
+            border-radius: 8px;
+        }
+
+        .request__again {
+            color: #494949;
+            font-weight: 700;
+            text-decoration: underline;
+        }
+    }
+}
+
+
+@media only screen and (max-width : 600px) {
+
+    .verify-container {
+        padding-top: 8rem;
+        justify-content: flex-start;
+        align-items: flex-start;
+
+        .verify__main {
+            width: 100%;
+            height: 100%;
+        }
+
+        .verification__title-container {
+            gap: 2rem;
+
+            h1 {
+                font-size: 2.5rem;
+            }
+        }
+
+        .verify__form {
+            input {
+                width: 100%;
+            }
+        }
+
+        .verify-form-wrapper {
+            height: 100%;
+        }
+    }
+
+}
+
+@media only screen and (max-width: 480px) {
+    .verify-container {
+        .verification__title-container {
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 390px) {
+    .verify-container {
+        .verification__title-container {
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            p {
+                font-size: 0.8rem;
+            }
+        }
+        .verify__form{
+            gap: 0.5rem;
+            input{
+                height: 2.5rem;
+            }
+        }
+        .code {
+            font-size: 0.8rem;
+        }
+
+    }
+}
