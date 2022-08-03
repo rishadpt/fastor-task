@@ -13,7 +13,7 @@ export default function Productinfo() {
   const firstref = useRef('')
   const secondref = useRef('')
   const thirdref = useRef('')
-
+  const [current ,setCurrent] = useState(0)
   
   const wishlistActive = (action) => {
     if (action === 'add') {
@@ -68,7 +68,7 @@ export default function Productinfo() {
         
       </div>
       {image && image.map((item, index) => (
-        <div key={index} style={{ backgroundImage: ` url(${item.url})` }} className="walpapper-container">
+        <div id={index} key={index} style={{ backgroundImage: ` url(${item.url})` }} className="walpapper-container">
       <img src='/Images/logo.png' alt="" />
          
         </div>))}
