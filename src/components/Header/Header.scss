@@ -15,7 +15,6 @@
         align-items: center;
         gap: 1rem;
         cursor: pointer;
-        display: flex;
         text-decoration: none;
         color: #000;
 
@@ -36,8 +35,6 @@
 
 @media only screen and (max-width:550px) {
     .header-container {
-
-
         .back__arrrow-container {
             h1 {
                 font-size: 1.5rem;
@@ -53,7 +50,6 @@
 @media only screen and (max-width:450px) {
     .header-container {
 
-
         .back__arrrow-container {
 
             h1 {
@@ -62,6 +58,22 @@
 
             svg {
                 font-size: 1.3rem;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width:420px) {
+    .header-container {
+        padding: 1rem 1rem;
+        .back__arrrow-container {
+
+            h1 {
+                font-size: 1rem;
+            }
+
+            svg {
+                font-size: 1rem;
             }
         }
     }

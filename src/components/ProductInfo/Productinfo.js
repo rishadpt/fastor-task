@@ -75,7 +75,8 @@ export default function Productinfo() {
       setImage(filter[0].images)
       setLoading(false)
     })
-  }, [])
+    document.title = data.restaurant_name
+  }, [data])
 
   const handleOnClick = () => {
     if (navigator.share) {
@@ -93,6 +94,11 @@ export default function Productinfo() {
     }
   };
 
+  const editOn = ()=>{
+    setEdit(true)
+    getPosition()
+  }
+
   const editOf = ()=> {
     setEdit(false)
     setConstX(x)
@@ -100,16 +106,17 @@ export default function Productinfo() {
     localStorage.setItem('x', x)
     localStorage.setItem('y', y)
   }
+
   return (
     loading ? <Loader /> :
-      <div onMouseOver={edit ? getPosition :undefined} className="productinfo-container">
+      <div  className="productinfo-container">
         <div className="image-header" >
          {!edit  && <Link to='/home'>
             <IoIosArrowBack />
           </Link>}
 
           <div className="share_container">
-            <MdEdit onClick={() => {edit ? editOf()  : setEdit(true) }} />
+            <MdEdit onClick={() => {edit ? editOf()  : editOn() }} />
            {!edit  && <AiOutlineShareAlt onClick={handleOnClick} />}
 
            {!edit  && <div className="share" ref={wishlistRef}>

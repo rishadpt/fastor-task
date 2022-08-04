@@ -4,7 +4,7 @@ import './Button.scss'
 
 export default function Button({name,link}) {
   return (
-   <Link className="button-container" to={link}>
+   <Link className="button-container" to={link} >
     {name}
    </Link>
   )

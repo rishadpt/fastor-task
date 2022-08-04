@@ -8,6 +8,7 @@ export default function Products() {
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
     useEffect(() => {
+        document.title = 'Home'
         fastorServices.getRestaurants().then(data => {
             setData(data)
             setLoading(false)
