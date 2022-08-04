@@ -53,16 +53,12 @@ export default function Productinfo() {
   }
 
   const getPosition = (e) => {
-
-    const rect = e.target.getBoundingClientRect()
-    console.log(rect)
-    const x = e.clientX - rect.left
-    const y = e.clientY - rect.top
-    console.log(e)
-    
-    setX(x)
-    setY(y)
+      setX(e.screenX-100)
+      setY(e.screenY-200)
   }
+
+  
+
  
   useEffect(() => {
     console.log(edit)
@@ -111,8 +107,8 @@ export default function Productinfo() {
 
         </div>
         {image[0] ? image.map((item, index) => (
-          <div  onMouseMove={edit ? getPosition :''} id={index} key={index} style={{ backgroundImage: ` url(${item.url})` }} className="walpapper-container">
-            <img style={{ top: edit ? `${x}px` : x, left: edit ? `${y}px` : y }} src='/Images/logo.png' alt="" />
+          <div  onMouseOver={edit ? getPosition :''} id={index} key={index} style={{ backgroundImage: ` url(${item.url})` }} className="walpapper-container">
+            <img style={{ top: edit ? `${y}px` : y, left: edit ? `${x}px` : x }} src='/Images/logo.png' alt="" />
 
           </div>)) : <Loader />}
         <div className="arrows">
