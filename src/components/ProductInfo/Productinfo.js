@@ -4,6 +4,7 @@ import { fastorServices } from '../../utils/service'
 import { Link, useParams } from 'react-router-dom'
 import { IoIosArrowBack } from 'react-icons/io'
 import { AiFillHeart, AiFillStar, AiOutlineShareAlt } from 'react-icons/ai'
+import Loader from '../Loader/Loader'
 
 export default function Productinfo() {
   const wishlistRef = useRef('')
@@ -14,6 +15,7 @@ export default function Productinfo() {
   const secondref = useRef('')
   const thirdref = useRef('')
   const [wishlist, setwishlist] = useState(false)
+  const [loading, setLoading] = useState(false)
 
   const wishlistActive = (action) => {
     if (action === 'add') {
@@ -57,7 +59,7 @@ export default function Productinfo() {
       let filter = data.filter((item) => item.restaurant_id === id)
       setData(filter[0])
       setImage(filter[0].images)
-
+      setLoading(false)
     })
   }, [])
 
@@ -66,8 +68,7 @@ export default function Productinfo() {
       navigator
         .share({
           title: `${data.restaurant_name}`,
-          text: `Check out  ${data.restaurant_name} on ${document.location.hostname}`,
-          url: image.url,
+          text: `Check out  ${data.restaurant_name} on ${document.location.hostname} ${image.url}`,
         })
         .then(() => {
           console.log('Successfully shared');
@@ -94,11 +95,11 @@ export default function Productinfo() {
         </div>
 
       </div>
-      {image && image.map((item, index) => (
+      {image[0] ? image.map((item, index) => (
         <div id={index} key={index} style={{ backgroundImage: ` url(${item.url})` }} className="walpapper-container">
           <img src='/Images/logo.png' alt="" />
 
-        </div>))}
+        </div>)):<Loader />}
       <div className="arrows">
         <div ref={firstref} onClick={() => { slider(1) }} className="slider__active slider__dot"></div>
         <div ref={secondref} onClick={() => { slider(2) }} className="slider__dot " ></div>

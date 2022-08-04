@@ -15,7 +15,6 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/products/:id" element={<Productinfo />} />
         </Routes>
-
       </Router>
     </div>
   );

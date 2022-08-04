@@ -7,12 +7,10 @@ import { BsSearch } from 'react-icons/bs'
 export default function Header() {
     return (
         <div className="header-container">
-            <div className="back__arrrow-container">
-                <Link to="/">
-                    <IoIosArrowBack />
+                <Link className="back__arrrow-container" to="/">
+                    <IoIosArrowBack /> 
+                    <h1 >Connaught place</h1>
                 </Link>
-                <h1>Connaught place</h1>
-            </div>
             <BsSearch style={{fontSize:' 1.5rem ',cursor:'pointer'}}/>
 
         </div>

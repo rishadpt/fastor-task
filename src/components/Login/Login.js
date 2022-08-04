@@ -21,10 +21,10 @@ export default function Login() {
                         <label>Mobile Number</label>
                         <div className="input__container">
                             <span>+91</span>
-                            <input onChange={(e) => { setData(e.target.value) }} maxLength={10} type="text" placeholder="Enter Your Mobile Number" />
+                            <input  onChange={(e) => { setData(e.target.value) }} maxLength={10} type="tel" placeholder="Enter Your Mobile Number" />
                         </div>
                     </div>
-                    <Button name="Request OTP" link={`/otp?mobile=${data}`} />
+                    <Button  name="Request OTP" link={data.length ===10 ? `/otp?mobile=${data}`: '/'} />
                 </div>
 
             </div>

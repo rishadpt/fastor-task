@@ -36,20 +36,19 @@ export default function Verify() {
                             onFocus={e => e.target.select()}
                             onChange={(e) => { handleChange(e.target, index) }}
                             onKeyDown={(e) => {
-                                if (e.code === 'Backspace') {
+                                if (e.code === 'Backspace' || e.keyCode === 8) {
                                     e.target.value = '';
                                     setField([...field.slice(0, index), ...field.slice(index)])
 
                                     e.target.previousSibling.focus()
                                 }
-
                             }
                             }
                         />))}
                     </div>
                     <span className="code">Didn’t recieve code ?  <span className="request__again">Request again</span> </span>
                 </div>
-                <Button name="Continue" link="/home" />
+                <Button name="Continue" link='/home' />
 
             </div>
         </div>

@@ -13,10 +13,12 @@
     .back__arrrow-container {
         display: flex;
         align-items: center;
-        gap: 1rem;  
-        a{
-            display: flex;
-        }
+        gap: 1rem;
+        cursor: pointer;
+        display: flex;
+        text-decoration: none;
+        color: #000;
+
         svg {
             font-size: 1.8rem;
             text-decoration: none;
@@ -34,13 +36,14 @@
 
 @media only screen and (max-width:550px) {
     .header-container {
-        
 
-        .back__arrrow-container{
-            h1{
+
+        .back__arrrow-container {
+            h1 {
                 font-size: 1.5rem;
             }
-            svg{
+
+            svg {
                 font-size: 1.5rem;
             }
         }
@@ -49,14 +52,15 @@
 
 @media only screen and (max-width:450px) {
     .header-container {
-        
 
-        .back__arrrow-container{
 
-            h1{
+        .back__arrrow-container {
+
+            h1 {
                 font-size: 1.4rem;
             }
-            svg{
+
+            svg {
                 font-size: 1.3rem;
             }
         }
