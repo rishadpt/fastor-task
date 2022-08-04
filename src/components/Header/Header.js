@@ -13,7 +13,7 @@ export default function Header() {
                 </Link>
                 <h1>Connaught place</h1>
             </div>
-            <BsSearch style={{fontSize:' 1.5rem '}}/>
+            <BsSearch style={{fontSize:' 1.5rem ',cursor:'pointer'}}/>
 
         </div>
     )

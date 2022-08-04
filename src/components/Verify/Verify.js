@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import Button from '../Button/Button'
 import './Verify.scss'
-
 export default function Verify() {
     const [field, setField] = useState(Array(6).fill(''))
 
@@ -13,21 +12,12 @@ export default function Verify() {
         if (element.nextSibling) {
             element.nextSibling.focus()
         }
-
-        // if (element.previousSibling) {
-        //     element.previousSibling.focus()
-        // }
-
-
-
     }
+    const search = window.location.search;
+    const params = new URLSearchParams(search);
+    const mobile = params.get('mobile');
 
-    const ha = (e) => {
-        if (e.code === 'Backspace') {
-            e.target.value = '';
-        }
-    }
-
+    
 
     return (
         <div className="verify-container">
@@ -35,7 +25,7 @@ export default function Verify() {
                 <div className="verification__title-container">
                     <h1>Verification Code</h1>
                     <p>We have sent the code verification to You Mobile
-                        Number +91123456780</p>
+                        Number +91 {mobile}</p>
                 </div>
                 <div className="verify-form-wrapper">
                     <div className="verify__form">
@@ -49,6 +39,7 @@ export default function Verify() {
                                 if (e.code === 'Backspace') {
                                     e.target.value = '';
                                     setField([...field.slice(0, index), ...field.slice(index)])
+
                                     e.target.previousSibling.focus()
                                 }
 

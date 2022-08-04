@@ -50,11 +50,13 @@
             border-radius: 8px;
         }
 
-        .request__again {
-            color: #494949;
-            font-weight: 700;
-            text-decoration: underline;
-        }
+        
+    }
+    .request__again {
+        color: #494949;
+        font-weight: 700;
+        text-decoration: underline;
+        cursor: pointer;
     }
 }
 

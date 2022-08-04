@@ -30,7 +30,7 @@
     .wishlist-active {
         color: #ff0000;
     }
-
+   
     .image-header {
         display: flex;
         justify-content: space-between;
@@ -41,7 +41,12 @@
         top: 44px;
         color: #fff;
         z-index: 1;
-
+        .share_container{
+            display: flex;
+        }
+        .share{
+            margin: 0 1rem;
+        }
     }
 
     .walpapper-container {
