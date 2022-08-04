@@ -43,9 +43,11 @@
         z-index: 1;
         .share_container{
             display: flex;
+            align-items: center;
         }
         .share{
             margin: 0 1rem;
+            display: flex;
         }
     }
 
