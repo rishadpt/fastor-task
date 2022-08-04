@@ -20,6 +20,8 @@ export default function Productinfo() {
   const [x, setX] = useState()
   const [y, setY] = useState()
   const [edit, setEdit] = useState(false)
+  const [constX, setConstX] = useState()
+  const [constY, setConstY] = useState()
 
   const wishlistActive = (action) => {
     if (action === 'add') {
@@ -52,16 +54,20 @@ export default function Productinfo() {
     }
   }
 
-  const getPosition = (e) => {
-      setX(e.screenX-100)
-      setY(e.screenY-200)
+  const getPosition = () => {
+    window.addEventListener('mousemove',(e)=>{
+    setX(e.screenX-100)
+    setY(e.screenY-200)
+})
   }
 
   
-
- 
   useEffect(() => {
-    console.log(edit)
+      localStorage.getItem('x')
+      localStorage.getItem('y')
+      setConstX(localStorage.getItem('x'))
+      setConstY(localStorage.getItem('y'))
+
     fastorServices.getRestaurants().then((data) => {
 
       let filter = data.filter((item) => item.restaurant_id === id)
@@ -87,17 +93,23 @@ export default function Productinfo() {
     }
   };
 
-
+  const editOf = ()=> {
+    setEdit(false)
+    setConstX(x)
+    setConstY(y)
+    localStorage.setItem('x', x)
+    localStorage.setItem('y', y)
+  }
   return (
     loading ? <Loader /> :
-      <div className="productinfo-container">
+      <div onMouseOver={edit ? getPosition :undefined} className="productinfo-container">
         <div className="image-header" >
          {!edit  && <Link to='/home'>
             <IoIosArrowBack />
           </Link>}
 
           <div className="share_container">
-            <MdEdit onClick={() => {edit ? setEdit(false) : setEdit(true) }} />
+            <MdEdit onClick={() => {edit ? editOf()  : setEdit(true) }} />
            {!edit  && <AiOutlineShareAlt onClick={handleOnClick} />}
 
            {!edit  && <div className="share" ref={wishlistRef}>
@@ -107,8 +119,8 @@ export default function Productinfo() {
 
         </div>
         {image[0] ? image.map((item, index) => (
-          <div  onMouseOver={edit ? getPosition :''} id={index} key={index} style={{ backgroundImage: ` url(${item.url})` }} className="walpapper-container">
-            <img style={{ top: edit ? `${y}px` : y, left: edit ? `${x}px` : x }} src='/Images/logo.png' alt="" />
+          <div   id={index} key={index+1} style={{ backgroundImage: ` url(${item.url})` }} className="walpapper-container">
+            <img style={{ top: edit ? `${y}px` : constY+'px', left: edit ? `${x}px` : constX+'px' }} src='/Images/logo.png' alt="" />
 
           </div>)) : <Loader />}
         <div className="arrows">
@@ -129,7 +141,7 @@ export default function Productinfo() {
           </span>
           <div className="star_container">
             {Array(5).fill(0).map((index) => (
-              <AiFillStar style={{ color: `${index < data?.rating?.restaurant_avg_rating ? '#FFC833' : null}` }} />))}
+              <AiFillStar key={index} style={{ color: `${index < data?.rating?.restaurant_avg_rating ? '#FFC833' : null}` }} />))}
 
           </div>
         </div>
