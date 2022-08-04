@@ -62,19 +62,18 @@ export default function Productinfo() {
       setLoading(false)
     })
   }, [])
-
   const handleOnClick = () => {
     if (navigator.share) {
       navigator
         .share({
           title: `${data.restaurant_name}`,
-          text: `Check out  ${data.restaurant_name} on ${document.location.hostname} ${image.url}`,
+          text: `Check out  ${data.restaurant_name} on ${document.location.hostname} ${image[0].url}`,
         })
         .then(() => {
           console.log('Successfully shared');
         })
         .catch(error => {
-          console.error('Something went wrong sharing the blog', error);
+          console.error('Something went wrong sharing the image', error);
         });
     }
   };
@@ -97,7 +96,7 @@ export default function Productinfo() {
       </div>
       {image[0] ? image.map((item, index) => (
         <div id={index} key={index} style={{ backgroundImage: ` url(${item.url})` }} className="walpapper-container">
-          <img src='/Images/logo.png' alt="" />
+          <img src='/Images/logo.png' alt=""  />
 
         </div>)):<Loader />}
       <div className="arrows">
@@ -117,7 +116,7 @@ export default function Productinfo() {
           350g
         </span>
         <div className="star_container">
-          {Array(5).fill(0).map((item, index) => (
+          {Array(5).fill(0).map((index) => (
             <AiFillStar style={{ color: `${index < data?.rating?.restaurant_avg_rating ? '#FFC833' : null}` }} />))}
 
         </div>
