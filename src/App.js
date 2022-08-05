@@ -10,10 +10,10 @@ function App() {
     <div >
       <Router>
         <Routes>
-          <Route path="/" element={<Login />} />
-          <Route path="/otp" element={<Verify />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/products/:id" element={<Productinfo />} />
+          <Route path="/" element={<Login />} />        {/* Login Section */}
+          <Route path="/otp" element={<Verify />} />    {/* OTp Verify Section */}
+          <Route path="/home" element={<Home />} />       {/* Home Section */}
+          <Route path="/products/:id" element={<Productinfo />} />        {/* Each product Section */}
         </Routes>
       </Router>
     </div>

@@ -4,7 +4,7 @@ import './Login.scss'
 
 
 export default function Login() {
-    const [data, setData] = useState('')
+    const [data, setData] = useState('')        // set Mobile number
 
     return (
         <div className="login-container">

@@ -2,7 +2,7 @@
     width: 100%;
     height: 20rem;
     position: relative;
-  
+
     a {
         text-decoration: none;
         color: #fff;
@@ -30,24 +30,26 @@
     .wishlist-active {
         color: #ff0000;
     }
-   
+
     .image-header {
         display: flex;
         justify-content: space-between;
         padding: 0 2rem;
         font-size: 2.2rem;
-        position: absolute;
+        position: fixed;
         width: 100%;
-        top: 44px;
+        top: 10px;
         color: #fff;
         z-index: 1;
-        .share_container{
+
+        .share_container {
             display: flex;
             cursor: pointer;
             align-items: center;
             gap: 1rem;
         }
-        .share{
+
+        .share {
             margin: 0 1rem;
             display: flex;
         }
@@ -61,6 +63,7 @@
         background-position: center;
         position: relative;
         overflow: hidden;
+
         img {
             position: absolute;
             width: 100%;
@@ -89,10 +92,11 @@
         justify-content: space-between;
         margin-top: 1rem;
         align-items: center;
-       p{
-        color:#282828;
-        font-weight: 700;
-       } 
+
+        p {
+            color: #282828;
+            font-weight: 700;
+        }
     }
 
     p {
@@ -102,47 +106,59 @@
     .star_container {
         display: flex;
 
+        svg {
+            &:hover {
+                transform: scale(1.2);
+                transition: all 0.3s ease-in-out;
+            }
+        }
     }
 }
 
-@media only screen  and (max-width: 700px) {
+@media only screen and (max-width: 700px) {
     .productinfo-container {
         height: 20rem;
-       .product__info{
-        padding: 1rem;
-       }
-        .walpapper-container{
+
+        .product__info {
+            padding: 1rem;
+        }
+
+        .walpapper-container {
             position: relative;
             display: flex;
             justify-content: center;
             align-items: center;
-            img{
-            
+
+            img {
+
                 width: 10rem;
                 height: 10rem;
             }
         }
-    
+
     }
 }
-    
+
 @media only screen and (max-width: 500px) {
     .productinfo-container {
-        .image-header{
+        .image-header {
             padding: 0 1rem;
             font-size: 1.5rem;
         }
-        .slider__active{
+
+        .slider__active {
             height: 0.3rem;
-            width: 1.5rem!important;
+            width: 1.5rem !important;
         }
-        .slider__dot{
+
+        .slider__dot {
             height: 5px;
             width: 5px;
         }
-      .walpapper-container{
-        height:20rem;
-      }
-}
-    
+
+        .walpapper-container {
+            height: 20rem;
+        }
+    }
+
 }

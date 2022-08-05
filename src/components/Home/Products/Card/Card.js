@@ -16,7 +16,7 @@ export default function Card({name,id,image,price,data}) {
                 </p>
             </div>
             <div className="star-container">
-            {Array(5).fill(0).map((item, index) => (
+            {Array(5).fill(0).map((i, index) => (
           <AiFillStar  style={{ color: `${index < data?.rating?.restaurant_avg_rating ?'#FFC833' :null}` }} />))}
             </div>
             <div className="price">
