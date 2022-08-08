@@ -2,10 +2,10 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import './Button.scss'
 
-export default function Button({name,link}) {
+export default function Button({name,action}) {
   return (
-   <Link className="button-container" to={link} >
+   <button onClick={action} className="button-container"  >
     {name}
-   </Link>
+   </button>
   )
 }

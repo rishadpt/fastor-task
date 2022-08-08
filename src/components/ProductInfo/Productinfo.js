@@ -8,20 +8,20 @@ import { MdEdit } from 'react-icons/md'
 import Loader from '../Loader/Loader'
 
 export default function Productinfo() {
-  const wishlistRef = useRef('')                  // useRef is used to store the ref of wishlist button
-  const { id } = useParams()                    // id is the product id
-  const [image, setImage] = useState([])      // image array
-  const [data, setData] = useState([])      // product data
-  const firstref = useRef('')             // useRef is used for Slider first image
-  const secondref = useRef('')            // useRef is used for Slider second image
-  const thirdref = useRef('')            // useRef is used for Slider third image 
-  const [wishlist, setwishlist] = useState(false)   // useState is used for wishlist
-  const [loading, setLoading] = useState(false)     // useState is used for loading
-  const [x, setX] = useState()                      // useState is used for X axis of Cursor
-  const [y, setY] = useState()                      // useState is used for Y axis of Cursor
-  const [edit, setEdit] = useState(false)           // useState is used for editmode
-  const [constX, setConstX] = useState()            // useState is used for Const X axis of Cursor
-  const [constY, setConstY] = useState()            // useState is used for Const Y axis of Cursor
+  const wishlistRef = useRef('')                        // useRef is used to store the ref of wishlist button
+  const { id } = useParams()                            // id is the product id
+  const [image, setImage] = useState([])                // image array
+  const [data, setData] = useState([])                  // product data
+  const firstref = useRef('')                           // useRef is used for Slider first image
+  const secondref = useRef('')                          // useRef is used for Slider second image
+  const thirdref = useRef('')                           // useRef is used for Slider third image 
+  const [wishlist, setwishlist] = useState(false)   
+  const [loading, setLoading] = useState(false)     
+  const [x, setX] = useState()                          // useState is used for X axis of Cursor
+  const [y, setY] = useState()                          // useState is used for Y axis of Cursor
+  const [edit, setEdit] = useState(false)               // useState is used for editmode
+  const [constX, setConstX] = useState()                // useState is used for Const X axis of Cursor
+  const [constY, setConstY] = useState()                // useState is used for Const Y axis of Cursor
 
   // wishlist active Inactive Function
   const wishlistActive = (action) => {
@@ -131,7 +131,7 @@ export default function Productinfo() {
     loading ? <Loader /> :
       <div className="productinfo-container">
         <div className="image-header" >
-          {!edit && <Link to='/home'>
+          {!edit && <Link to='/home'> 
             <IoIosArrowBack />
           </Link>}
 
