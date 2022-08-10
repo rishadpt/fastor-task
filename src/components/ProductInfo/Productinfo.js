@@ -124,7 +124,7 @@ export default function Productinfo() {
       setLoading(false)
     })
     document.title = data.restaurant_name
-  }, [data])
+  }, [])
 
 
   return (
