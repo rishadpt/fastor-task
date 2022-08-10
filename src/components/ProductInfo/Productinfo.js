@@ -123,7 +123,6 @@ export default function Productinfo() {
       setImage(filter[0].images)                  // setImage is used to set the image array
       setLoading(false)
     })
-    document.title = data.restaurant_name
   }, [])
 
 
