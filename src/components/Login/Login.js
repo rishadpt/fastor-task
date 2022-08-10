@@ -8,7 +8,7 @@ export default function Login() {
     const [data, setData] = useState('')        // set Mobile number
     const navigate = useNavigate()
 
-    const handleSubmit = (data) => {
+    const handleSubmit = (data) => {        //submit the Mobilenumber
         fastorServices.postRegister(data).then(res => {
            if(res.status === 'Success') {
             navigate(`/otp?mobile=${data}`)

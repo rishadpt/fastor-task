@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom'
 export default function Verify() {
     const [field, setField] = useState(Array(6).fill(''))   // Array of 6 empty strings used for otp
     const [err, setErr] = useState(false)
-    const [loading, setLoading]= useState(false)
+    const [loading, setLoading] = useState(false)
     const navigate = useNavigate()
 
     const handleChange = (element, index) => {
@@ -23,8 +23,7 @@ export default function Verify() {
     const params = new URLSearchParams(search);
     const mobile = params.get('mobile');
 
-    const handleSubmit = (data) => {
-
+    const handleSubmit = (data) => {            //submit the otp
         if (data.join('') !== '') {
             let postData = {
                 phone: mobile,
@@ -37,7 +36,7 @@ export default function Verify() {
                     navigate('/home')
                 } else {
                     setErr(true)
-                    
+
                 }
                 setLoading(false)
             }
@@ -78,7 +77,7 @@ export default function Verify() {
                     {err ? <span className="err">Sorry Otp is wrong </span> : null}
 
                 </div>
-                <Button action={() => handleSubmit(field)} name="Continue"  />
+                <Button action={() => handleSubmit(field)} name="Continue" />
 
             </div>
         </div>
